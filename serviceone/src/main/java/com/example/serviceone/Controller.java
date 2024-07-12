@@ -1,10 +1,7 @@
 package com.example.serviceone;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +17,14 @@ public class Controller {
     @Value("${location}")
     private String location;
 
+    @Value("${topic}")
+    private String topic;
+
     @GetMapping()
     public String message() {
-        return message+" "+location;
+        return message+" "+location+" "+ topic;
     }
+
+
 
 }
